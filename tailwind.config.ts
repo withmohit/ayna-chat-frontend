@@ -25,8 +25,8 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         chatblue: "#0088cc",
-        lightgray: "#f0f2f5",
-        messageblue: "#dcf8c6",
+        lightgray: "#1A1F2C",
+        messageblue: "#1C4D44",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

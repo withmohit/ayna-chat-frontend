@@ -11,18 +11,18 @@ const Sidebar = ({ isOpen, activeChat, onChatSelect }) => {
     <div
       className={`${
         isOpen ? "w-80" : "w-0"
-      } transition-all duration-300 overflow-hidden border-r bg-lightgray`}
+      } transition-all duration-300 overflow-hidden border-r border-gray-700 bg-[#1e293b]`}
     >
-      <div className="p-4 bg-white border-b">
-        <h2 className="text-xl font-semibold">Chats</h2>
+      <div className="p-4 bg-[#1e293b] border-b border-gray-700">
+        <h2 className="text-xl font-semibold text-gray-200">Chats</h2>
       </div>
       <div className="overflow-y-auto">
         {chats.map((chat) => (
           <div
             key={chat.id}
             onClick={() => onChatSelect(chat.id)}
-            className={`p-4 cursor-pointer hover:bg-gray-100 transition-colors ${
-              activeChat === chat.id ? "bg-gray-100" : ""
+            className={`p-4 cursor-pointer hover:bg-gray-800 transition-colors ${
+              activeChat === chat.id ? "bg-gray-800" : ""
             }`}
           >
             <div className="flex items-center gap-3">
@@ -30,8 +30,8 @@ const Sidebar = ({ isOpen, activeChat, onChatSelect }) => {
                 <MessageCircle className="text-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-medium truncate">{chat.name}</h3>
-                <p className="text-sm text-gray-500 truncate">{chat.lastMessage}</p>
+                <h3 className="font-medium text-gray-200 truncate">{chat.name}</h3>
+                <p className="text-sm text-gray-400 truncate">{chat.lastMessage}</p>
               </div>
             </div>
           </div>

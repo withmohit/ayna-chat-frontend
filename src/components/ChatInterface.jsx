@@ -17,23 +17,23 @@ const ChatInterface = () => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-[#0f172a]">
       <Sidebar
         isOpen={isSidebarOpen}
         activeChat={activeChat}
         onChatSelect={setActiveChat}
       />
       <div className="flex flex-col flex-1 overflow-hidden">
-        <div className="flex items-center gap-4 p-4 bg-white border-b">
+        <div className="flex items-center gap-4 p-4 bg-[#1e293b] border-b border-gray-700">
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
           >
-            <Menu size={24} />
+            <Menu size={24} className="text-gray-300" />
           </button>
-          <h1 className="text-xl font-semibold">Chat {activeChat}</h1>
+          <h1 className="text-xl font-semibold text-gray-200">Chat {activeChat}</h1>
         </div>
-        <div className="flex-1 overflow-y-auto p-4 bg-[#efeae2]">
+        <div className="flex-1 overflow-y-auto p-4 bg-[#1a1f2c]">
           {messages.map((message) => (
             <MessageBubble
               key={message.id}
