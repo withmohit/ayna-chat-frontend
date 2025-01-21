@@ -1,12 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const Sidebar = ({ isOpen, activeChat, onChatSelect }) => {
-  const chats = [
-    { id: 1, name: "John Doe", lastMessage: "Hey, how are you?" },
-    { id: 2, name: "Jane Smith", lastMessage: "See you tomorrow!" },
-    { id: 3, name: "Team Chat", lastMessage: "Meeting at 3 PM" },
-  ];
-
+const Sidebar = ({ isOpen, activeChat, onChatSelect, chats }) => {
   return (
     <div
       className={`${
