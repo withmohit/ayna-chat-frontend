@@ -1,14 +1,14 @@
 const MessageBubble = ({ message, isSent }) => {
   return (
     <div
-      className={`max-w-[70%] p-3 rounded-lg mb-2 animate-fade-in ${
+      className={`max-w-[70%] p-2.5 rounded-lg animate-fade-in ${
         isSent
-          ? "bg-messageblue ml-auto rounded-tr-none"
-          : "bg-[#2c3544] mr-auto rounded-tl-none"
+          ? "bg-messageblue/80 ml-auto rounded-tr-none"
+          : "bg-[#2c3544]/50 mr-auto rounded-tl-none"
       }`}
     >
-      <p className="text-gray-200">{message}</p>
-      <span className="text-xs text-gray-400 mt-1 block">
+      <p className="text-gray-200 text-sm">{message}</p>
+      <span className="text-[10px] text-gray-400 mt-1 block">
         {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
       </span>
     </div>

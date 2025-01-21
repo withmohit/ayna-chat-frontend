@@ -35,16 +35,16 @@ const ChatInterface = () => {
         chats={chats}
       />
       <div className="flex flex-col flex-1 overflow-hidden">
-        <div className="flex items-center gap-4 p-4 bg-[#1e293b] border-b border-gray-700">
+        <div className="flex items-center gap-2 p-3 bg-[#1e293b] border-b border-gray-700/50">
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
+            className="p-1.5 hover:bg-gray-700/50 rounded-lg transition-colors"
           >
-            <Menu size={24} className="text-gray-300" />
+            <Menu size={20} className="text-gray-300" />
           </button>
-          <h1 className="text-xl font-semibold text-gray-200">{activeChatName}</h1>
+          <h1 className="text-lg font-medium text-gray-200">{activeChatName}</h1>
         </div>
-        <div className="flex-1 overflow-y-auto p-4 bg-[#1a1f2c]">
+        <div className="flex-1 overflow-y-auto p-3 bg-[#1a1f2c] space-y-2">
           {messages.map((message) => (
             <MessageBubble
               key={message.id}

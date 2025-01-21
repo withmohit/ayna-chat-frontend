@@ -13,19 +13,19 @@ const MessageInput = ({ onSendMessage }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2 p-4 bg-[#1e293b] border-t border-gray-700">
+    <form onSubmit={handleSubmit} className="flex items-center gap-2 p-3 bg-[#1e293b] border-t border-gray-700/50">
       <input
         type="text"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Type a message..."
-        className="flex-1 p-2 bg-[#2c3544] text-gray-200 border border-gray-700 rounded-lg focus:outline-none focus:border-chatblue placeholder-gray-500"
+        className="flex-1 p-2 bg-[#2c3544]/50 text-gray-200 border border-gray-700/50 rounded-lg focus:outline-none focus:border-chatblue/50 placeholder-gray-500 text-sm"
       />
       <button
         type="submit"
-        className="p-2 text-white bg-chatblue rounded-lg hover:bg-blue-600 transition-colors"
+        className="p-2 text-white bg-chatblue/80 rounded-lg hover:bg-chatblue transition-colors"
       >
-        <Send size={20} />
+        <Send size={18} />
       </button>
     </form>
   );
