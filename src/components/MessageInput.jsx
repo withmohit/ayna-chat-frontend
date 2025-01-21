@@ -13,7 +13,7 @@ const MessageInput = ({ onSendMessage }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2 p-3 bg-[#1e293b] border-t border-gray-700/50">
+    <form onSubmit={handleSubmit} className="flex items-center gap-2 p-2 bg-[#1e293b] border-t border-gray-700/50">
       <input
         type="text"
         value={message}
@@ -25,7 +25,7 @@ const MessageInput = ({ onSendMessage }) => {
         type="submit"
         className="p-2 text-white bg-chatblue/80 rounded-lg hover:bg-chatblue transition-colors"
       >
-        <Send size={18} />
+        <Send size={16} />
       </button>
     </form>
   );
