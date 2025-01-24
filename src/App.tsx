@@ -14,7 +14,7 @@ const App = () => {
         identifier: identifier,
         password: password
       };
-      const response = await axios.post('https://ayna-chat-backend-17qp.onrender.com/api/auth/local', data);
+      const response = await axios.post('http://localhost:1337/api/auth/local', data);
       if (response.status === 200 && response.data.jwt) {
         localStorage.setItem('jwtToken', response.data.jwt);
         setIsAuthenticated(true);
@@ -36,7 +36,7 @@ const App = () => {
         email: email,
         password: password
       };
-      const response = await axios.post('https://ayna-chat-backend-17qp.onrender.com/api/auth/local/register', data);
+      const response = await axios.post('http://localhost:1337/api/auth/local/register', data);
       if (response.status === 200) {
         alert('Signup successful! Please login.');
         localStorage.setItem('jwtToken', response.data.jwt);
