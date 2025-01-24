@@ -5,15 +5,16 @@ import './index.css'; // Ensure Tailwind CSS is included here
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async (identifier, password) => {
+    setIsLoading(true);
     try {
       const data = {
         identifier: identifier,
         password: password
       };
-      const response = await axios.post('http://localhost:1337/api/auth/local', data);
-      // console.log(response);
+      const response = await axios.post('https://ayna-chat-backend-17qp.onrender.com/api/auth/local', data);
       if (response.status === 200 && response.data.jwt) {
         localStorage.setItem('jwtToken', response.data.jwt);
         setIsAuthenticated(true);
@@ -22,17 +23,20 @@ const App = () => {
       }
     } catch (error) {
       alert('Error during login: ' + error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const handleSignup = async (username, email, password) => {
+    setIsLoading(true);
     try {
       const data = {
         username: username,
         email: email,
         password: password
       };
-      const response = await axios.post('http://localhost:1337/api/auth/local/register', data);
+      const response = await axios.post('https://ayna-chat-backend-17qp.onrender.com/api/auth/local/register', data);
       if (response.status === 200) {
         alert('Signup successful! Please login.');
         localStorage.setItem('jwtToken', response.data.jwt);
@@ -42,6 +46,8 @@ const App = () => {
       }
     } catch (error) {
       alert('Error during signup: ' + error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -64,10 +70,16 @@ const App = () => {
         </div>
       ) : (
         <div className="w-full max-w-md border border-gray-700 rounded-lg bg-gray-800 p-4">
-          <h1 className="text-3xl font-bold my-4">MessageFlux</h1>
+          <h1 className="text-3xl font-bold my-4">Chat Application</h1>
 
-          <LoginForm onLogin={handleLogin} />
-          <SignupForm onSignup={handleSignup} />
+          {isLoading ? (
+            <div className="text-center text-lg font-medium">Loading...</div>
+          ) : (
+            <>
+              <LoginForm onLogin={handleLogin} />
+              <SignupForm onSignup={handleSignup} />
+            </>
+          )}
         </div>
       )}
     </div>

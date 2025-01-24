@@ -3,10 +3,8 @@ import { io } from 'socket.io-client';
 import { saveChatSession, loadChatSession } from './localStorage';
 
 const token = localStorage.getItem('jwtToken');
-const socket = io('http://localhost:1337/', {
-  auth: {
-    token: token,
-  },
+const socket = io('https://ayna-chat-backend-17qp.onrender.com/',{
+  auth: {token},
 });
 
 const ChatApp = () => {
