@@ -8,7 +8,7 @@ if (!token) {
   console.error('JWT token not found. User might not be authenticated.');
 }
 
-const socket = io('http://localhost:1337/', {
+const socket = io('https://ayna-chat-backend-17qp.onrender.com/', {
   auth: token ? { token } : {},
 });
 
