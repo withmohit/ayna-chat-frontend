@@ -1,8 +1,11 @@
-# Welcome to your Lovable project
+# Welcome
 
 ## Project info
 
 **URL**: https://ayna-chat-frontend.onrender.com
+![Screenshot from 2025-01-24 12-46-31](https://github.com/user-attachments/assets/e9a0b06c-37dd-4927-ad7b-1f7c6e258d9c)
+
+![Screenshot from 2025-01-24 12-46-11](https://github.com/user-attachments/assets/d0b84447-d865-4f76-96bf-a5165bcacfaf)
 
 
 ```sh
